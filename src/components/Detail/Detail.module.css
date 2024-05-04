@@ -1,0 +1,26 @@
+.containerDetail {
+  padding: 12px;
+  margin-top: 50px;
+  background-color: rgb(65, 65, 80);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.imgDetail{
+  height: 100%;
+  width: 300px;
+  border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+  .containerDetail{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .imgDetail {
+    width: 200px;
+  }
+}

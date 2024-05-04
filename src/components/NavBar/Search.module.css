@@ -1,0 +1,33 @@
+.containerSearchBar {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  gap: 5px;
+}
+
+.searchbar_input {
+  background-color: #1a1a1a;
+}
+
+.searchbar_button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  background-color: #313234;
+  color: #ececec;
+  border: none;
+}
+
+.searchbar_button:hover {
+  background-color: #01b4c6;
+}
+
+@media (max-width: 768px) {
+  .containerSearchBar {
+    display: flex;
+    flex-flow: column wrap;
+    padding-right: 40px;
+  }
+}

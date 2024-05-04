@@ -1,0 +1,15 @@
+.container_footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 12px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container_footer {
+    max-height: 80px;
+    font-size: 10px;
+  }
+}

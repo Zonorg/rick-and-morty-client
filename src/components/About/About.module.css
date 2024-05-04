@@ -1,0 +1,15 @@
+.imgAbout {
+  height: auto;
+  width: 600px;
+  border-radius: 12px;
+}
+
+.linkHenry:hover {
+  color: yellow;
+}
+
+@media (max-width: 600px) {
+  .imgAbout {
+    width: 300px;
+  }
+}
