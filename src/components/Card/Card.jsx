@@ -4,7 +4,7 @@ import { addFavorite, removeFavorite } from "../../redux/actions/index";
 import { useSelector, useDispatch } from "react-redux";
 import { CiHeart } from "react-icons/ci";
 import { MdFavorite } from "react-icons/md";
-import { RiAliensFill } from "react-icons/ri";
+import { PiAlienFill } from "react-icons/pi";
 import { BsInfoCircle } from "react-icons/bs";
 import { BsGenderAmbiguous } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
@@ -45,11 +45,11 @@ export default function Card({ name, species, gender, image, onClose, id }) {
         <div className={styles.card_info}>
           <p className={styles.name}>{name}</p>
           <p className={styles.subtitles}>
-            <RiAliensFill />
+            <PiAlienFill size={18} />
             {species}
           </p>
           <p className={styles.subtitles}>
-            <BsGenderAmbiguous />
+            <BsGenderAmbiguous size={18} />
             {gender}
           </p>
         </div>
