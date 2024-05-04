@@ -2,7 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Error404 from "./components/Utilities/Error404";
-import Form from "./components/Form/Form.jsx";
+import Login from "./components/Login/Login.jsx";
 import Nav from "./components/NavBar/Nav.jsx";
 import Cards from "./components/Card/Cards.jsx";
 import About from "./components/About/About.jsx";
@@ -16,8 +16,8 @@ function App() {
   const location = useLocation();
   const [access, setAccess] = useState(false);
 
-  const username = "";
-  const password = "";
+  const username = "rick";
+  const password = "12345";
 
   const logOut = () => {
     setAccess(false);
@@ -46,10 +46,10 @@ function App() {
           setCharacters((oldChars) => [...oldChars, data]);
           navigate("/home");
         } else {
-          window.alert("Este personaje ya fue agregado.");
+          window.alert("Character already added.");
         }
       } else {
-        window.alert(`El personaje con el ID ${id} no existe.`);
+        window.alert(`Character with ID ${id} does not exist.`);
       }
     } catch (error) {
       console.error(error);
@@ -77,12 +77,12 @@ function App() {
           />
           <Route path="/about" element={<About />} />
           <Route path="/detail/:id" element={<Detail />} />
-          <Route path="/" element={<Form login={login} />} />
+          <Route path="/" element={<Login login={login} />} />
           <Route path="/favorites" element={<Favorites />} />
           {characters.length === 0 && <Route path="*" element={<Error404 />} />}
         </Routes>
       </div>
-      <Footer />
+      {location.pathname !== "/" && <Footer />}
     </div>
   );
 }

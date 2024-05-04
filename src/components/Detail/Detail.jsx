@@ -18,11 +18,11 @@ export default function Detail(props) {
         if (char.name) {
           setInfo(char);
         } else {
-          window.alert("No hay personajes con ese ID");
+          window.alert("No character with that ID");
         }
       })
       .catch((err) => {
-        window.alert("No hay personajes con ese ID");
+        window.alert("No character with that ID");
       });
 
     return () => setInfo({});
@@ -43,7 +43,11 @@ export default function Detail(props) {
           <h5>Gender: {infoDetail.gender}</h5>
           <h5>Origin: {infoDetail.origin}</h5>
           <div>
-            <img className={styles.imgDetail} src={infoDetail.image} alt={infoDetail.name} />
+            <img
+              className={styles.imgDetail}
+              src={infoDetail.image}
+              alt={infoDetail.name}
+            />
           </div>
         </div>
       ) : (

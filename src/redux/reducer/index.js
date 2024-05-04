@@ -35,7 +35,6 @@ export default function reducer(state = initialState, { type, payload }) {
         myFavorites: payload === "All" ? state.allCharacters : filtered,
       };
     case ORDER:
-      console.log("soy yo");
       // eslint-disable-next-line array-callback-return
       const sorted = state.myFavorites.sort((a, b) => {
         if (payload === "descendente") {

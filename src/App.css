@@ -53,7 +53,7 @@ button {
 
 a:link,
 a:visited {
-  text-decoration: none;
+  text-decoration: inherit;
   color: inherit;
   transition: 0.3s ease;
 }

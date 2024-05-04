@@ -1,41 +1,61 @@
+import { Link } from "react-router-dom";
 import styles from "../About/About.module.css";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function About(props) {
   return (
-    <div>
-      <h3>
-        Renzo Viscio{" "}
-        <a href="https://github.com/Zonorg" target={"_blank"} rel="noreferrer">
-          GitHub
-        </a>
-      </h3>
-      <img
-        className={styles.imgAbout}
-        src="./about-img.jpg"
-        alt="RickAndMorty"
-      />
-      <p>Descripción del trabajo realizado: </p>
-      <p>
-        Aplicación de Rick y Morty creada con React para la integración de lo
-        aprendido en el BootCamp
-      </p>
-      <a
-        className={styles.linkHenry}
-        href="https://www.soyhenry.com/"
-        target={"_blank"}
-        rel="noreferrer"
-      >
-        Henry
-      </a>
-      .{" "}
-      <p>
-        La interfaz permite a los usuarios buscar los personajes de la serie por
-        id, seleccionarlos y ver su descripción.{" "}
-      </p>{" "}
-      <p>
-        La sección detallada de personajes incluye información de cada uno de
-        ellos, como nombre, especie, género y su origen de aparición.
-      </p>
+    <div className={styles.about_container}>
+      <div className={styles.hero_container}>
+        <div className={styles.about_content}>
+          <h1 className={styles.about_title}>About this project.</h1>
+          <h3>Description of the work done:</h3>
+          <p>
+            Rick and Morty application created with React for the integration of
+            what was learned in BootCamp{" "}
+            <Link
+              className={styles.henry_link}
+              to="https://www.soyhenry.com/"
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              Henry.
+            </Link>
+          </p>
+          <p>
+            The interface allows users to search the characters of the series by
+            id, select them and see their description.{" "}
+          </p>{" "}
+          <p>
+            The detailed character section includes information about each
+            character, such as name, species, gender and their origin of
+            appearance.
+          </p>
+          <h4>Renzo Viscio </h4>
+          <Link
+            className={styles.social_link}
+            to="https://github.com/Zonorg"
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            <FaGithub size={22} />
+            GitHub
+          </Link>
+          <Link
+            className={styles.social_link}
+            to="https://www.linkedin.com/in/renzo-viscio-b69a13217/"
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            <FaLinkedin size={22} />
+            Linkedin
+          </Link>
+        </div>
+        <img
+          className={styles.about_img}
+          src="./about-img.png"
+          alt="RickAndMorty"
+        />
+      </div>
     </div>
   );
 }

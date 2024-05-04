@@ -5,19 +5,17 @@ export function validate(objUser) {
   const errors = {};
 
   if (!regexEmail.test(objUser.username)) {
-    errors.username = "*El usuario debe ser un email";
+    errors.username = "*Provide a valid email";
   } else if (!objUser.username) {
-    errors.username = "*El nombre de usuario no puede estar vacío";
+    errors.username = "*Username cannot be empty";
   } else if (objUser.username.length > 35) {
-    errors.username =
-      "*El nombre de usuario no puede tener más de 35 caracteres";
+    errors.username = "*Username cannot have more than 35 characters";
   }
 
   if (!regexPassword.test(objUser.password)) {
-    errors.password = "*La contraseña debe tener al menos un número";
+    errors.password = "*Password must have at least 1 number";
   } else if (objUser.password.length < 6 || objUser.password.length > 10) {
-    errors.password =
-      "*La contraseña debe tener una longitud entre 6 y 10 caracteres";
+    errors.password = "*Password must be between 6 and 10 characters";
   }
   return errors;
 }

@@ -1,10 +1,33 @@
 .container_footer {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  text-align: center;
-  font-size: 12px;
+  align-items: center;
+  padding: 80px 0 40px 0;
   width: 100%;
+}
+
+.footer_content {
+  width: 1250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.developed_by {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.profile_link {
+  color: #01b4c6;
+}
+
+.profile_link:hover {
+  border-bottom: 1px solid #01b4c6;
+}
+
+.profile_link:visited {
+  color: #01b4c6;
 }
 
 @media (max-width: 768px) {

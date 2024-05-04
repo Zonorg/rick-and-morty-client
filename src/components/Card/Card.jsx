@@ -43,15 +43,15 @@ export default function Card({ name, species, gender, image, onClose, id }) {
       <img src={image} alt={name} className={styles.img_card} />
       <div className={styles.card_content}>
         <div className={styles.card_info}>
-          <h4 className={styles.name}>{name}</h4>
-          <h4 className={styles.subtitles}>
+          <p className={styles.name}>{name}</p>
+          <p className={styles.subtitles}>
             <RiAliensFill />
             {species}
-          </h4>
-          <h4 className={styles.subtitles}>
+          </p>
+          <p className={styles.subtitles}>
             <BsGenderAmbiguous />
             {gender}
-          </h4>
+          </p>
         </div>
         <div className={styles.bottom_buttons}>
           {isFav ? (
@@ -64,12 +64,12 @@ export default function Card({ name, species, gender, image, onClose, id }) {
               <CiHeart className={styles.dislike} size={40} />
             </button>
           )}
-          <Link className={styles.read_more} to={`/detail/${id}`}>
-            <BsInfoCircle />
-            Read More
-          </Link>
         </div>
       </div>
+      <Link className={styles.read_more} to={`/detail/${id}`}>
+        <BsInfoCircle />
+        Read More
+      </Link>
     </div>
   );
 }

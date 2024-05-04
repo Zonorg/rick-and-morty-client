@@ -9,24 +9,26 @@ export default function Cards(props) {
     <div className={styles.home_content}>
       <div className={styles.hero_container}>
         <div className={styles.hero_content}>
+          <div className={styles.hero_left_content}>
+            <img
+              className={styles.title_hero}
+              src="./title-hero.png"
+              alt="Main Hero"
+            />
+            <h1 className={styles.subtitle_hero}>
+              Discover everything in a single{" "}
+              <span className={styles.hero_span}>location.</span>
+            </h1>
+            <p className={styles.text_hero}>
+              Characters, settings, episodes, and much more.
+            </p>
+          </div>
           <img
-            className={styles.title_hero}
-            src="./title-hero.png"
+            className={styles.img_hero}
+            src="./hero-image.png"
             alt="Main Hero"
           />
-          <h1 className={styles.subtitle_hero}>
-            Discover everything in a single{" "}
-            <span className={styles.hero_span}>location.</span>
-          </h1>
-          <p className={styles.text_hero}>
-            Characters, settings, episodes, and much more.
-          </p>
         </div>
-        <img
-          className={styles.img_hero}
-          src="./hero-image.png"
-          alt="Main Hero"
-        />
       </div>
       <SearchBar onSearch={props.onSearch} />
       <div className={styles.cards_container}>

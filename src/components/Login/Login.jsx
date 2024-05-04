@@ -1,8 +1,8 @@
 import React from "react";
 import { validate } from "./validation";
-import styles from "../Form/Form.module.css";
+import styles from "../Login/Login.module.css";
 
-export default function Form({ login }) {
+export default function Login({ login }) {
   const [userData, setUserData] = React.useState({
     username: "",
     password: "",
@@ -29,9 +29,11 @@ export default function Form({ login }) {
         />
       </div>
       <div>
-        <form className={styles.containerForm} onSubmit={handleSubmit}>
+        <form className={styles.container_form} onSubmit={handleSubmit}>
           <img className={styles.img_title} src="./imgLogin.png" alt="Title" />
-          <label htmlFor="username">Username: </label>
+          <label className={styles.label_login} htmlFor="username">
+            Username:{" "}
+          </label>
           <input
             className={styles.input_login}
             type="text"
@@ -39,8 +41,10 @@ export default function Form({ login }) {
             onChange={handleInputChange}
             value={userData.username}
           />
-          <p>{errors.username}</p>
-          <label htmlFor="username">Password: </label>
+          {/* <p>{errors.username}</p> */}
+          <label className={styles.label_login} htmlFor="username">
+            Password:{" "}
+          </label>
           <input
             className={styles.input_login}
             type="password"
@@ -48,7 +52,8 @@ export default function Form({ login }) {
             onChange={handleInputChange}
             value={userData.password}
           />
-          <p>{errors.password}</p>
+          {/* <p>{errors.password}</p> */}
+          <span className={styles.span_login}>user: rick pass: 12345</span>
           <button className={styles.login_button} type="submit">
             Login
           </button>

@@ -1,7 +1,11 @@
-.container {
-  display: flex;
+.fav_container {
   padding: 80px 0;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1250px;
   gap: 20px;
-  flex-wrap: wrap;
+}
+
+.no_favs_text {
+  grid-column: 1 / -1;
 }
