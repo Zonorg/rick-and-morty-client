@@ -5,7 +5,7 @@ export function addFavorite(character) {
   return async function (dispatch) {
     try {
       const respuestaDelBack = await axios.post(
-        "http://localhost:3001/favs/create",
+        `${import.meta.env.VITE_API_URL}/favs/create`,
         character
       );
       return dispatch({
@@ -21,7 +21,7 @@ export function removeFavorite(id) {
   return async function (dispatch) {
     try {
       const response = await axios.delete(
-        "http://localhost:3001/favs/delete/" + id
+        `${import.meta.env.VITE_API_URL}/favs/delete/` + id
       );
       return dispatch({ type: DELETE_CHARACTER, payload: response.data });
     } catch (error) {
@@ -33,7 +33,7 @@ export function removeFavorite(id) {
 export function getFavorites() {
   return async function (dispatch) {
     try {
-      const response = await axios("http://localhost:3001/favs/get");
+      const response = await axios(`${import.meta.env.VITE_API_URL}/favs/get`);
       return dispatch({ type: "GET_FAVS", payload: response.data });
     } catch (error) {
       return dispatch({ type: "ERROR", payload: error });

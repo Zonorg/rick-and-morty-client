@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState, useEffect } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Error404 from "./components/Utilities/Error404";
@@ -9,6 +8,7 @@ import About from "./components/About/About.jsx";
 import Favorites from "./components/Utilities/Favorites";
 import Detail from "./components/Detail/Detail.jsx";
 import Footer from "./components/Footer/Footer";
+import "./App.css";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -38,7 +38,7 @@ function App() {
   async function onSearch(id) {
     try {
       const response = await fetch(
-        `http://localhost:3001/rickandmorty/onsearch/${id}`
+        `${import.meta.env.VITE_API_URL}/rickandmorty/onsearch/${id}`
       );
       const data = await response.json();
       if (data.name) {

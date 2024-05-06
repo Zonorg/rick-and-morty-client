@@ -14,7 +14,7 @@ export default function Detail(props) {
   const getIdData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/rickandmorty/detail/${id}`
+        `${import.meta.env.VITE_API_URL}/rickandmorty/detail/${id}`
       );
       const data = await response.json();
       setInfo(data);
@@ -71,7 +71,7 @@ export default function Detail(props) {
             </div>
           </div>
           <Link className={styles.return_link} to="/home">
-            <FaArrowLeftLong className={styles.return_icon} size={25}/>
+            <FaArrowLeftLong className={styles.return_icon} size={25} />
             Search more characters
           </Link>
         </>
