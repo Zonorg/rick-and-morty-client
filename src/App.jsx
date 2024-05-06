@@ -8,6 +8,7 @@ import About from "./components/About/About.jsx";
 import Favorites from "./components/Utilities/Favorites";
 import Detail from "./components/Detail/Detail.jsx";
 import Footer from "./components/Footer/Footer";
+import apiUrl from "./main.jsx";
 import "./App.css";
 
 function App() {
@@ -37,9 +38,7 @@ function App() {
 
   async function onSearch(id) {
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/rickandmorty/onsearch/${id}`
-      );
+      const response = await fetch(`${apiUrl}/rickandmorty/onsearch/${id}`);
       const data = await response.json();
       if (data.name) {
         if (!characters.some((character) => character.id === data.id)) {

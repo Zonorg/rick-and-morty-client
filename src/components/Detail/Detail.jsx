@@ -6,6 +6,7 @@ import { PiAlienFill, PiMonitorPlay } from "react-icons/pi";
 import { BsGenderAmbiguous } from "react-icons/bs";
 import { IoPlanet, IoLocationSharp } from "react-icons/io5";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import apiUrl from "../../main";
 
 export default function Detail(props) {
   const [infoDetail, setInfo] = useState({});
@@ -13,9 +14,7 @@ export default function Detail(props) {
 
   const getIdData = async () => {
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/rickandmorty/detail/${id}`
-      );
+      const response = await fetch(`${apiUrl}/rickandmorty/detail/${id}`);
       const data = await response.json();
       setInfo(data);
       console.log(data);
